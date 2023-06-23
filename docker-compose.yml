@@ -1,0 +1,32 @@
+version: '3'
+services:
+  web:
+    restart: always
+    build: .
+    volumes:
+      - ./:/var/www/
+    depends_on:
+      - db
+
+  db:
+    image: postgres:12.0-alpine
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+            PGPASSWORD: 'secret'
+            POSTGRES_DB: 'labjef-ep'
+            POSTGRES_USER: 'postgres'
+            POSTGRES_PASSWORD: 'secret'
+    volumes:
+      - "./.docker/dbdata:/var/lib/postgresql/data"
+
+  nginx:
+    build: ./.docker/nginx
+    restart: always
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www
+    depends_on:
+      - web
