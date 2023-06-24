@@ -14,6 +14,13 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 COPY . /var/www
 
 RUN chmod -R 777 /var/www/storage
+RUN chmod -R 777 bootstrap/cache storage
+RUN composer install
+RUN php artisan key:generate
+RUN php artisan migrate
+
+
+
 
 EXPOSE 9000
 
