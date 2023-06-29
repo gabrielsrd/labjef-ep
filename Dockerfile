@@ -15,10 +15,10 @@ COPY . /var/www
 
 RUN chmod -R 777 /var/www/storage
 RUN chmod -R 777 bootstrap/cache storage
+RUN chmod -R 777 .
 RUN composer install
 RUN php artisan key:generate
 RUN php artisan migrate
-
 
 
 
