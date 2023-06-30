@@ -6,9 +6,11 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+    /*
+    id (chave prim)
+    func_tec (chave)
+    id_func (foreign) (chave)
+    */
     public function up(): void
     {
         //
@@ -19,6 +21,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        DB::statement('funcao_tecnica_funcionario');
     }
 };

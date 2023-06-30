@@ -6,9 +6,10 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+    /*
+    id_aluno (chave prim)
+    id_usuario (foreign) (chave)
+    */
     public function up(): void
     {
         //
@@ -19,6 +20,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        DB::statement('DROP TABLE aluno');
     }
 };

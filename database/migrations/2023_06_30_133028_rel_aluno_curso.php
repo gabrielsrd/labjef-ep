@@ -6,9 +6,14 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+    /*
+    id (chave prim)
+    data_inic (chave)
+    data_fim
+    nota_ingresso
+    id_curso (foreign) (chave)
+    id_aluno (foreign) (chave)
+    */
     public function up(): void
     {
         //
@@ -19,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        DB::statement('DROP TABLE rel_aluno_curso');
     }
 };

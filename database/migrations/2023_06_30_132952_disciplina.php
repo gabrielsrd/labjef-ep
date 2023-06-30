@@ -6,9 +6,13 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+    /*
+    id_disc (chave prim)
+    codigo (chave)
+    ementa
+    data_criacao
+    nome
+    */
     public function up(): void
     {
         //
@@ -19,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        DB::statement('DROP TABLE disciplina');
     }
 };
