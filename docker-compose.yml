@@ -30,3 +30,11 @@ services:
       - ./:/var/www
     depends_on:
       - web
+    
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db

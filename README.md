@@ -1,7 +1,7 @@
 # EP LAB JEF
 http://localhost:8000/
 
-`docker-compose up -d --build`<br>
+`sudo docker-compose up -d --build`<br>
 
 `docker-compose exec web bash`<br>
 
